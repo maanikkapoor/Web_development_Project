@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Phones</title>
+    <style>
+                .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+        
+        .nav-links a {
+            color: #004085;
+            text-decoration: none;
+        }
+        /* LOGO */
+        
+        .logo {
+            font-size: 50px;
+            color: #004085;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        /* NAVBAR MENU */
+        
+        .menu {
+            display: flex;
+            gap: 1em;
+            font-size: 30px;
+            color: #004085;
+            text-decoration: none;
+        }
+        li {
+            list-style: none;
+            background-color: #ffffff;
+            color: #004085;
+        }
+        
+        .menu li:hover {
+            background-color: #B4CFEC;
+            border-radius: 40px;
+            transition: 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .menu li {
+            padding: 5px 14px;
+            text-decoration: none;
+        }
+        
+        .wrapper {
+            display: flex;
+            font-family: Montserrat;
+            background: #ffffff;
+            width: 100%;
+            height: 50vh;
+        }
+        
+        .outer {
+            position: relative;
+            background: #fff;
+            height: 350px;
+            width: 550px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        
+        img {
+            position: absolute;
+            top: 0px;
+            right: -20px;
+            z-index: 0;
+            animation-delay: 0.5s;
+        }
+        
+        .content {
+            animation-delay: 0.3s;
+            position: absolute;
+            left: 20px;
+            z-index: 3
+        }
+        
+        h1 {
+            color: #111;
+        }
+        
+        p {
+            width: 280px;
+            font-size: 13px;
+            line-height: 1.4;
+            color: #aaa;
+            margin: 20px 0;
+        }
+        
+        .bg {
+            display: inline-block;
+            color: #fff;
+            background: cornflowerblue;
+            padding: 5px 10px;
+            border-radius: 50px;
+            font-size: .7em;
+        }
+        
+        .button {
+            width: fit-content;
+            height: fit-content;
+            margin-top: 10px;
+        }
+        
+        .button a {
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            font-size: 11px;
+            color: #111;
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 1px solid #aaa;
+            font-weight: bold;
+        }
+        
+        .button a:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -10px;
+            width: 0%;
+            background: #111;
+            height: 100%;
+            z-index: -1;
+            transition: width 0.3s ease-in-out;
+            transform: skew(-25deg);
+            transform-origin: right;
+        }
+        
+        .button a:hover:after {
+            width: 150%;
+            left: -10px;
+            transform-origin: left;
+        }
+        
+        .button a:hover {
+            color: #fff;
+            transition: all 0.5s ease;
+        }
+        
+        .button a:nth-of-type(1) {
+            border-radius: 50px 0 0 50px;
+            border-right: none;
+        }
+        
+        .button a:nth-of-type(2) {
+            border-radius: 0px 50px 50px 0;
+        }
+        
+        .cart-icon {
+            padding-right: 8px;
+        }
+        /*  SECTIONS  */
+        
+        .section {
+            clear: both;
+            padding: 0px;
+            margin: 0px;
+        }
+        /*  COLUMN SETUP  */
+        
+        .col {
+            display: block;
+            float: left;
+            margin: 1% 0 1% 1.6%;
+        }
+        
+        .col:first-child {
+            margin-left: 0;
+        }
+        /*  GROUPING  */
+        
+        .group:before,
+        .group:after {
+            content: "";
+            display: table;
+        }
+        
+        .group:after {
+            clear: both;
+        }
+        
+        .group {
+            zoom: 1;
+            /* For IE 6/7 */
+        }
+        /*  GRID OF TWO  */
+        
+        .span_2_of_2 {
+            width: 100%;
+        }
+        
+        .span_1_of_2 {
+            width: 49.2%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="sticky-top">
+        <nav class="navbar">
+            <!-- LOGO -->
+            <div class="logo"> <img src="./logo.png" alt="" style="border-radius: 50%; height: 50px; width: 50px;">Static</div>
+            <!-- NAVIGATION MENU -->
+            <ul class="nav-links">
+                <!-- USING CHECKBOX HACK -->
+                <!-- <input type="checkbox" id="checkbox_toggle" />
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label> -->
+                <!-- NAVIGATION MENUS -->
+                <div class="menu">
+                    <li>
+                        <a href="new.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="phone.html"> Products</a></li>
+                    <li class="services ">
+                        <a href="login.html">Login</a>
+                        <!-- DROPDOWN MENU -->
+                        <!-- <ul class="dropdown ">
+                            <li><a href="/ ">Volunteer </a></li>
+                            <li><a href="/ ">Team </a></li>
+                            <li><a href="/ ">Social Media </a></li>
+                        </ul> -->
+                    </li>
+
+
+                </div>
+            </ul>
+        </nav>
+    </div>
+    <div class="section group">
+        <div class="col span_1_of_2">
+            <div class="wrapper">
+                <div class="outer">
+                    <div class="content animated fadeInLeft">
+                        <span class="bg animated fadeInDown">New</span>
+                        <h1>S-Phone 14<br/> 526 GB</h1>
+                        <p>15.49 cm (6.1"), Super Retina XDR
+                            4GB RAM | 128GB ROM | iOS 14
+                            Hexa-Core A14 Bionic Chip Processor
+                            R: 12MP + 12MP | F: 12MP
+                            2815 mAh Lithium Ion Battery
+                            Barometer | Proximity Sensor</p>
+
+                        <div class="button">
+                            <a href="#">INR 1,20,000</a><a class="cart-btn" href="#"><i class="cart-icon ion-bag"></i>ADD TO CART</a>
+                        </div>
+
+                    </div>
+                    <img src="./p1.png" width="300px" class="animated fadeInRight">
+
+                </div>
+            </div>
+        </div>
+        <div class="col span_1_of_2">
+            <div class="wrapper">
+                <div class="outer">
+                    <div class="content animated fadeInLeft">
+                        <span class="bg animated fadeInDown">New</span>
+                        <h1>S-Phone 11<br/> 256 GB</h1>
+                        <p>15.49 cm (6.1"), Liquid Retina HD
+                            4GB RAM | 64GB ROM | iOS 14
+                            Hexa-Core A13 Bionic Chip Processor
+                            Dual Rear Camera | Single Front Camera
+                            3110 mAh Lithium Ion Battery
+                            Proximity Sensor | Face ID</p>
+
+                        <div class="button">
+                            <a href="#">INR 86,000</a><a class="cart-btn" href="#"><i class="cart-icon ion-bag"></i>ADD TO CART</a>
+                        </div>
+
+                    </div>
+                    <img src="./p3.png" width="300px" class="animated fadeInRight">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col span_2_of_2">
+            <div class="wrapper">
+                <div class="outer">
+                    <div class="content animated fadeInLeft">
+                        <span class="bg animated fadeInDown">New</span>
+                        <h1>S-Phone XE<br/> 128 GB</h1>
+                        <p>11.94 cm (4.7"), Retina HD Display
+                            256GB ROM | iOS 15
+                            Apple A15 Bionic Chip Hexa Core Processor
+                            R: 12MP | F: 7MP
+                            Built-in Rechargeable Lithium‑ion Battery
+                            Touch ID Fingerprint Sensor | Barometer | Three‑axis Gyro | Accelerometer | Proximity Sensor | Ambient Light Sensor</p>
+
+                        <div class="button">
+                            <a href="#">INR 67000</a><a class="cart-btn" href="#"><i class="cart-icon ion-bag"></i>ADD TO CART</a>
+                        </div>
+
+                    </div>
+                    <img src="./p2.png" width="300px" class="animated fadeInRight">
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+</body>
+
+
+</html>

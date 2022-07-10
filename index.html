@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Static Corp</title>
+    <style>
+        .mySlides {
+            display: none
+        }
+        img {
+            vertical-align: middle;
+        }
+        /* Slideshow container */
+        
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+        /* Next & previous buttons */
+        
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        /* Position the "next button" to the right */
+        
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        /* On hover, add a black background color with a little bit see-through */
+        
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        /* Caption text */
+        
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+        /* Number text (1/3 etc) */
+        
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        /* The dots/bullets/indicators */
+        
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+        /* Fading animation */
+        
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        /* On smaller screens, decrease text size */
+        
+        
+        /* Make the image fully responsive */
+        
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .item {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        
+        .item-card {
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        
+        .item-card-title {
+            font-size: 15px;
+            transition: 1s;
+            cursor: pointer;
+        }
+        
+        .item-card-title i {
+            font-size: 15px;
+            transition: 1s;
+            cursor: pointer;
+            color: #ffa710
+        }
+        
+        .card-title i:hover {
+            transform: scale(1.25) rotate(100deg);
+            color: #18d4ca;
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-text {
+            height: 80px;
+        }
+        
+        .card::before,
+        .card::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transform: scale3d(0, 0, 1);
+            transition: transform .3s ease-out 0s;
+            background: rgba(255, 255, 255, 0.1);
+            content: '';
+            pointer-events: none;
+        }
+        
+        .card::before {
+            transform-origin: left top;
+        }
+        
+        .card::after {
+            transform-origin: right bottom;
+        }
+        
+        .card:hover::before,
+        .card:hover::after,
+        .card:focus::before,
+        .card:focus::after {
+            transform: scale3d(1, 1, 1);
+        }
+        .footer-bottom
+        {
+            color: black;
+            text-align: center;
+        }
+
+footer::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+footer{
+    background: whitesmoke;
+}
+
+.footer{
+    width: 80%;
+    margin: 0 auto;
+}
+.Fbox{
+    display: flex;
+}
+.Fbox li{
+    list-style: none;
+    margin-left: 15px;
+    padding-left: 60px;
+}
+.Fbox li a{
+    color: black;
+}
+.Fbox li a:hover{
+    color: black;
+    text-decoration: none;
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="https://flyclipart.com/thumb2/jedi-order-893306.png" alt="" class="navbar-brand" height="60px">
+        <a class="navbar-brand" href="./index.html">STATIC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./index.html">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./aboutus.html">About us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Products
+              </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="phone.html">Phones</a>
+                        <a class="dropdown-item" href="acc.html">Accessories</a>
+                        <div class="dropdown-divider"></div>
+
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href=""><img src="./ip1.png" alt="ip1" width="1100" height="500"></a>
+                </div>
+                <div class="carousel-item">
+                    <a href=""><img src="./ip2.png" alt="ip2" width="1100" height="500"></a>
+                </div>
+                <div class="carousel-item">
+                    <a href=""><img src="./ip3.png" alt="ip3" width="1100" height="500"></a>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+
+
+        </div>
+    </div>
+    <br>
+    <hr style="width:50%; display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto; border-style: inset; border-width: 1px; ">
+    <br>
+    <center>
+        <h1>Explore What You Want</h1>
+    </center>
+    <br>
+    <div class="container mt-2">
+
+        <div class="row">
+            <div class="col-md-3 col-sm-6 item">
+                <div class="card item-card card-block">
+                    <img src="https://i.pinimg.com/736x/ba/63/58/ba6358760dabdc96018094cee5d803c8.jpg" alt="i1">
+                    <h5 class="item-card-title mt-3 mb-3">P-Phones</h5>
+                    <p class="card-text">Planning for Online Mobile Shopping? Visit us now to explore mobile phones.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item">
+                <div class="card item-card card-block">
+
+                    <img src="https://static.pexels.com/photos/7357/startup-photos.jpg" alt="Photo of i2">
+                    <h5 class="card-title  mt-3 mb-3">Accessories</h5>
+                    <p class="card-text">Buy from a variety of womens fashion accessories available upto 50% discount online at Static.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 iem">
+                <div class="card item-card card-block">
+
+                    <img src="https://static.pexels.com/photos/262550/pexels-photo-262550.jpeg" alt="Photo of i3">
+                    <h5 class="card-title  mt-3 mb-3">Tacbooks</h5>
+                    <p class="card-text">Check out the all-new Tac Studio, TacBook Pro, TacBook Air, iTac, Tac mini, and more.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item">
+                <div class="card item-card card-block">
+
+                    <img src="https://static.pexels.com/photos/326424/pexels-photo-326424.jpeg" alt="Photo of i4">
+                    <h5 class="card-title  mt-3 mb-3">Services</h5>
+                    <p class="card-text">The best experiences. Only on Apple, Apple TV+, Apple Music, Apple Arcade, iCloud, Apple One./p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <hr style="width:50%; display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto; border-style: inset; border-width: 1px; ">
+    <br>
+    <center>
+        <h1>Whats right for you from our flagship</h1>
+    </center>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 my-4 mx-auto">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsve">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead-inverse">
+                                    <tr>
+                                        <th class="w-25"></th>
+                                        <th class="">P-Phone XE</th>
+                                        <th class="">P-phone 13</th>
+                                        <th class="">P-Phone 14</th>
+                                        <th class="">Managed</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="w-25 option"> Storage</td>
+                                        <td class="">128 GB</td>
+                                        <td class="">256 GB</td>
+                                        <td class="">512 GB</td>
+                                        <td class="">upto 5 TB CLOUD</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="option">Camera</td>
+                                        <td><i class="fa fa-check"></i>Single-camera system</td>
+                                        <td><i class="fa fa-check"></i>Advanced dual‑camera system Wide, Ultra Wide</td>
+                                        <td><i class="fa fa-check"></i>Pro Triple system Wide, Ultra Wide</td>
+                                        <td><i class="fa fa-check"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="option">Processor</td>
+                                        <td>A11 Bionic Chip</td>
+                                        <td><i class="fa fa-check"></i>A13 Bionic Chip</td>
+                                        <td><i class="fa fa-check"></i>A14 Bionic Chip</td>
+                                        <td><i class="fa fa-check"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="option">Connectivity</td>
+                                        <td>4G</td>
+                                        <td>4G</td>
+                                        <td><i class="fa fa-check"></i>5G</td>
+                                        <td><i class="fa fa-check"></i>5G</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="option">Database</td>
+                                        <td>-</td>
+                                        <td>optional</td>
+                                        <td><i class="fa fa-check"></i></td>
+                                        <td><i class="fa fa-check"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="option">Backups</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td><i class="fa fa-check"></i></td>
+                                        <td><i class="fa fa-check"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="option">Tech Support</td>
+                                        <td>None</td>
+                                        <td>$50/incident</td>
+                                        <td>$35/incident</td>
+                                        <td>24/7 included</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="option">Custom Servers</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td><i class="fa fa-check"></i></td>
+                                        <td><i class="fa fa-check"></i></td>
+                                    </tr>
+                                    <tr class="text-uppercase font-weight-bold">
+                                        <td></td>
+                                        <td>$799</td>
+                                        <td>$999</td>
+                                        <td>$1299</td>
+                                        <td><a href>Contact us</a></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot class="thead-inverse">
+                                    <tr>
+                                        <th class="w-25"></th>
+                                        <th class=""><button class="btn btn-primary">Buy Now</button></th>
+                                        <th class=""><button class="btn btn-primary">Buy Now</button></th>
+                                        <th class=""><button class="btn btn-primary">Buy Now</button></th>
+                                        <th class=""></th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+       <center><nav1>
+        <ul class="Fbox">
+            <li><a href="#"></a></li>
+       <li ><a href="#"><strong>FAQ</strong> </a></li>
+       <li><a href="#"><strong>Feedback</strong></a></li>
+       <li><a href="#"><strong>Terms of Use</strong></a></li>
+       <li><a href="#"><strong>Privacy policy</strong></a></li> 
+       <li><a href="#"><strong>Shipping Policy</strong> </a></li>
+       </ul>
+
+   <div class="footer-bottom">
+    &copy;  <strong>STATIC CORP. | ALL RIGHTS RESERVED</strong> 
+    </div>
+
+    </nav1></center> 
+</div>
+    </footer>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+
+</body>
+
+</html>

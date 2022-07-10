@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>static</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #588bc2;
+        }
+        
+        li {
+            list-style: none;
+            background-color: #ffffff;
+            color: #004085;
+        }
+        /* NAVBAR STYLING STARTS */
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+        
+        .nav-links a {
+            color: #004085;
+            text-decoration: none;
+        }
+        /* LOGO */
+        
+        .logo {
+            font-size: 50px;
+            color: #004085;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        /* NAVBAR MENU */
+        
+        .menu {
+            display: flex;
+            gap: 1em;
+            font-size: 30px;
+            color: #004085;
+            text-decoration: none;
+        }
+        
+        .menu li:hover {
+            background-color: #B4CFEC;
+            border-radius: 40px;
+            transition: 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .menu li {
+            padding: 5px 14px;
+            text-decoration: none;
+        }
+        
+        .crousal {
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(10, 80vw);
+            grid-template-rows: 1fr;
+            grid-column-gap: 1rem;
+            grid-row-gap: 1rem;
+            overflow: scroll;
+            height: 65vh;
+            scroll-snap-type: both mandatory;
+            scroll-padding: 1rem;
+        }
+        
+        .active {
+            scroll-snap-type: unset;
+        }
+        
+        li.gal {
+            scroll-snap-align: center;
+            display: inline-block;
+            border-radius: 3px;
+            font-size: 0;
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        /* comparison table */
+        
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+        
+        th,
+        td {
+            text-align: center;
+            padding: 16px;
+        }
+        
+        th:first-child,
+        td:first-child {
+            text-align: left;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+        
+        .fa-check {
+            color: green;
+        }
+        
+        .fa-remove {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sticky-top">
+        <nav class="navbar">
+            <!-- LOGO -->
+            <div class="logo"> <img src="./logo.png" alt="" style="border-radius: 50%; height: 50px; width: 50px;">Static</div>
+            <!-- NAVIGATION MENU -->
+            <ul class="nav-links">
+                <!-- USING CHECKBOX HACK -->
+                <!-- <input type="checkbox" id="checkbox_toggle" />
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label> -->
+                <!-- NAVIGATION MENUS -->
+                <div class="menu">
+                    <li>
+                        <a href="./index.html">Home</a></li>
+                    <li><a href="aboutus">About Us</a></li>
+                    <li><a href="phone.html"> Products</a></li>
+                    <li class="services ">
+                        <a href="login.html">Login</a>
+                        <!-- DROPDOWN MENU -->
+                        <!-- <ul class="dropdown ">
+                            <li><a href="/ ">Volunteer </a></li>
+                            <li><a href="/ ">Team </a></li>
+                            <li><a href="/ ">Social Media </a></li>
+                        </ul> -->
+                    </li>
+
+
+                </div>
+            </ul>
+        </nav>
+    </div>
+
+    <ul class="crousal">
+        <li class="gal" style="background: #f6bd60;"><img src="./ip1.png" alt="" srcset=""></li>
+        <li class="gal" style="background: #f7ede2;"><img src="./ip2.png" alt="" srcset=""></li>
+        <li class="gal" style="background: #f5cac3;"><img src="./ip3.png" alt=""></li>
+    </ul>
+    <br>
+    <hr style="width:50%; display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto; border-style: inset; border-width: 1px; ">
+    <br>
+    <center>
+        <h1>Explore What You Want</h1>
+    </center>
+    <br>
+    <div class="container mt-2">
+
+        <div class="row">
+            <div class="col-md-3 col-sm-6 item">
+                <div class="card item-card card-block">
+                    <img src="https://i.pinimg.com/736x/ba/63/58/ba6358760dabdc96018094cee5d803c8.jpg" alt="Photo of sunset">
+                    <h5 class="item-card-title mt-3 mb-3">P-Phones</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, sint!.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item">
+                <div class="card item-card card-block">
+
+                    <img src="https://static.pexels.com/photos/7357/startup-photos.jpg" alt="Photo of sunset">
+                    <h5 class="card-title  mt-3 mb-3">Accessories</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, temporibus..</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item">
+                <div class="card item-card card-block">
+
+                    <img src="https://static.pexels.com/photos/262550/pexels-photo-262550.jpeg" alt="Photo of sunset">
+                    <h5 class="card-title  mt-3 mb-3">Tacbooks</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aperiam..</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item">
+                <div class="card item-card card-block">
+
+                    <img src="https://static.pexels.com/photos/326424/pexels-photo-326424.jpeg" alt="Photo of sunset">
+                    <h5 class="card-title  mt-3 mb-3">Services</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, aut?</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <hr style="width:50%; display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto; border-style: inset; border-width: 1px; ">
+    <br>
+    <center>
+        <h1>Whats right for you from our flagship</h1>
+    </center>
+    <br>
+    <table>
+        <tr>
+            <th style="width:50%">Features</th>
+            <th>P-Phone 14</th>
+            <th>P-Phone 14 Pro</th>
+        </tr>
+        <tr>
+            <td>Storage</td>
+            <td><i class="fa fa-remove">256GB</i></td>
+            <td><i class="fa fa-check">512GB</i></td>
+        </tr>
+        <tr>
+            <td>Camera</td>
+            <td><i class="fa fa-check">2 Camera setup</i></td>
+            <td><i class="fa fa-check">3 Camera Setup with LiDar Sensor</i></td>
+        </tr>
+        <tr>
+            <td>Processor</td>
+            <td><i class="fa fa-check"></i>A14</td>
+            <td><i class="fa fa-check"></i>A14+</td>
+        </tr>
+        <tr>
+            <td>Display</td>
+            <td><i class="fa fa-remove">5 Inch</i></td>
+            <td><i class="fa fa-check">6.1 Inch</i></td>
+        </tr>
+        <tr>
+            <td>Connectivity</td>
+            <td><i class="fa fa-check">4G</i></td>
+            <td><i class="fa fa-check">5G</i></td>
+        </tr>
+    </table>
+
+</body>
+
+<script>
+    const slider = document.querySelector('.crousal');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', e => {
+        isDown = true;
+        slider.classList.add('active');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('mouseleave', _ => {
+        isDown = false;
+        slider.classList.remove('active');
+    });
+    slider.addEventListener('mouseup', _ => {
+        isDown = false;
+        slider.classList.remove('active');
+    });
+    slider.addEventListener('mousemove', e => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const SCROLL_SPEED = 3;
+        const walk = (x - startX) * SCROLL_SPEED;
+        slider.scrollLeft = scrollLeft - walk;
+    });
+</script>
+
+</html>

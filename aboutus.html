@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>About Us</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+        
+        .nav-links a {
+            color: #004085;
+            text-decoration: none;
+        }
+        /* LOGO */
+        
+        .logo {
+            font-size: 50px;
+            color: #004085;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        /* NAVBAR MENU */
+        
+        .menu {
+            display: flex;
+            gap: 1em;
+            font-size: 30px;
+            color: #004085;
+            text-decoration: none;
+        }
+        li {
+            list-style: none;
+            background-color: #ffffff;
+            color: #004085;
+        }
+        .menu li:hover {
+            background-color: #B4CFEC;
+            border-radius: 40px;
+            transition: 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .menu li {
+            padding: 5px 14px;
+            text-decoration: none;
+        }
+        
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://wallpaperaccess.com/full/3954537.jpg");
+            height: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+        
+        .about {
+            width: 100%;
+            height: 60vh;
+            background-color: #5078f2;
+            background-image: linear-gradient(315deg, #5078f2 0%, #efe9f4 74%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .about .content img {
+            height: auto;
+            width: 500px;
+            max-width: 100%;
+        }
+        
+        .text {
+            width: 550px;
+            max-width: 100%;
+            padding: 0 5px;
+        }
+        
+        .content {
+            width: 1280px;
+            max-width: 95%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .text h1 {
+            color: #004085;
+            font-size: 85px;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+        }
+        
+        .text h5 {
+            color: rgb(16, 16, 90);
+            font-size: 25px;
+            margin-bottom: 25px;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+        }
+        
+        .text p {
+            color: rgb(26, 24, 24);
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 1px;
+            margin-bottom: 45px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sticky-top">
+        <nav class="navbar">
+            <!-- LOGO -->
+            <div class="logo"> <img src="./logo.png" alt="" style="border-radius: 50%; height: 50px; width: 50px;">Static</div>
+            <!-- NAVIGATION MENU -->
+            <ul class="nav-links">
+                <!-- USING CHECKBOX HACK -->
+                <!-- <input type="checkbox" id="checkbox_toggle" />
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label> -->
+                <!-- NAVIGATION MENUS -->
+                <div class="menu">
+                    <li>
+                        <a href="new.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="phone.html"> Products</a></li>
+                    <li class="services ">
+                        <a href="login.html">Login</a>
+                        <!-- DROPDOWN MENU -->
+                        <!-- <ul class="dropdown ">
+                            <li><a href="/ ">Volunteer </a></li>
+                            <li><a href="/ ">Team </a></li>
+                            <li><a href="/ ">Social Media </a></li>
+                        </ul> -->
+                    </li>
+
+
+                </div>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1 style="font-size:50px">We're building a more harmonious place on earth</h1>
+            <p>~Static</p>
+        </div>
+    </div>
+
+
+
+    <section class="about">
+        <div class="content">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/m43rh-pI0P0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="text">
+                <h1>About Us</h1>
+                <h5>Static Corp.</h5>
+                <p>
+                    Arjun Alagh is finishing his second year in Maharaja Surajmal Institute. So, he's here to build a website of a phone manufacturing company- "Static".  
+            </div>
+
+    </section>
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
